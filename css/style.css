@@ -1,5 +1,27 @@
 /********** Template CSS **********/
 
+/*** Mobile Optimization ***/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/*** Typography - Headings ***/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600;
+}
+
+h1 { font-weight: 700; }
+h2 { font-weight: 600; }
+h3 { font-weight: 600; }
+h4 { font-weight: 500; }
+h5 { font-weight: 500; }
+h6 { font-weight: 500; }
+
 /*** Spinner ***/
 #spinner {
     opacity: 0;
@@ -55,14 +77,24 @@
 
 /*** Navbar ***/
 .sticky-top {
-    top: -150px;
+    top: -50px;
     transition: .5s;
 }
 
 .navbar {
-    padding: 15px 0;
+    padding: 5px 0;
     font-family: "Space Grotesk", sans-serif;
     font-size: 18px;
+}
+
+.navbar-brand {
+    overflow: visible;
+    z-index: 1000;
+}
+
+.navbar-brand img {
+    position: relative;
+    z-index: 1001;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -95,7 +127,35 @@
 @media (max-width: 991.98px) {
     .navbar .navbar-nav .nav-link  {
         margin-left: 0;
-        padding: 10px 0;
+        padding: 5px 0;
+    }
+    
+    .navbar-brand img {
+        height: 60px !important;
+    }
+    
+    .hero-header {
+        padding-top: 100px;
+        margin-top: -80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 50px !important;
+    }
+    
+    .display-1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .hero-header {
+        padding-top: 80px;
+        margin-top: -60px;
+    }
+    
+    .service-item, .project-item {
+        margin-bottom: 30px;
     }
 }
 
@@ -380,6 +440,14 @@
         margin-right: 10px;
         margin-left: 0;
     }
+    
+    .header-carousel {
+        padding: 20px 0;
+    }
+    
+    .header-carousel::before {
+        width: 100%;
+    }
 }
 
 
@@ -420,21 +488,24 @@
     text-align: left;
     color: rgba(255,255,255,.5);
     font-weight: normal;
-    transition: .3s;
+    transition: none !important;
+    transform: none !important;
 }
 
-.footer .btn.btn-link:hover {
-    color: var(--bs-white);
-    letter-spacing: 1px;
-    box-shadow: none;
+.footer .btn.btn-link:hover,
+.footer .btn.btn-link:focus,
+.footer .btn.btn-link:active {
+    color: rgba(255,255,255,.5) !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    letter-spacing: 0 !important;
 }
+
 
 .footer .btn.btn-link::before {
-    position: relative;
-    content: "\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 10px;
+    display: none;
 }
 
 .footer .copyright {
@@ -448,7 +519,7 @@
 }
 
 .footer .copyright a:hover {
-    color: var(--bs-white);
+    color: rgba(255,255,255,.5);
 }
 
 .footer .footer-menu a {
