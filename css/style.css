@@ -77,7 +77,7 @@ h6 { font-weight: 500; }
 
 /*** Navbar ***/
 .sticky-top {
-    top: -150px;
+    top: -50px;
     transition: .5s;
 }
 
