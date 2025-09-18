@@ -3,10 +3,36 @@
 /*** Mobile Optimization ***/
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Prevent horizontal scrolling on all devices */
+* {
+    max-width: 100%;
+}
+
+.container-fluid,
+.container {
+    overflow-x: hidden;
+}
+
+/* Ensure images don't cause horizontal overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for rows that might extend beyond viewport */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
 }
 
 /*** Typography - Headings ***/
@@ -156,6 +182,31 @@ h6 { font-weight: 500; }
     
     .service-item, .project-item {
         margin-bottom: 30px;
+    }
+    
+    /* Force mobile viewport constraints */
+    body, html {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    .container-fluid {
+        max-width: 100vw;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    /* Ensure text doesn't cause overflow */
+    h1, h2, h3, h4, h5, h6, p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
     }
 }
 
@@ -447,6 +498,33 @@ h6 { font-weight: 500; }
     
     .header-carousel::before {
         width: 100%;
+    }
+    
+    /* Additional mobile fixes to prevent horizontal scrolling */
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    .row {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    
+    .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+    .col-7, .col-8, .col-9, .col-10, .col-11, .col-12,
+    .col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
+    .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12,
+    .col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+    .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12,
+    .col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+    .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+        padding-left: 15px;
+        padding-right: 15px;
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
 
